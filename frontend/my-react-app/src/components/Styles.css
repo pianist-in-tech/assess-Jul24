@@ -1,0 +1,106 @@
+body {
+    font-family: 'Arial, sans-serif';
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .recipe-list-container, .recipe-detail-container, .add-recipe-container {
+    width: 80%;
+    margin: 20px auto;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+  
+  .recipe-list-container h3, .recipe-detail-container h3, .add-recipe-container h3 {
+    text-align: center;
+    color: #333;
+  }
+  
+  .recipe-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .recipe-list li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .recipe-list li:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .recipe-list img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .search-bar {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  /* .recipe-detail-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  } */
+  
+  .add-recipe-container form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .add-recipe-container table {
+    width: 100%;
+    margin: 0 auto;
+    border-collapse: collapse;
+  }
+  
+  .add-recipe-container table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    vertical-align: middle;
+  }
+  
+  .add-recipe-container table input,
+  .add-recipe-container table textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .add-recipe-container table button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #28a745;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .add-recipe-container table button:hover {
+    background-color: #218838;
+  }
+
+  .recipe-image {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    display: block;
+    margin: 10px 0;
+  }

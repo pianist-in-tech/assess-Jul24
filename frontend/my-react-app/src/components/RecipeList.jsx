@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { getRecipes } from '../Api';
+import './Styles.css';
 
 const RecipeList = ({ onSelectRecipe }) => {
   const [recipes, setRecipes] = useState([]);
@@ -18,9 +19,9 @@ const RecipeList = ({ onSelectRecipe }) => {
 }, []);
 
   return (
-    <div>
-      <h1>Recipes</h1>
-      <ul>
+    <div className='recipe-list-container'>
+      <h3>Recipes</h3>
+      <ul className='recipe-list'>
         {recipes.map(recipe => (
           <li key={recipe.id} onClick={() =>onSelectRecipe(recipe.id)}>
             {recipe.name}
