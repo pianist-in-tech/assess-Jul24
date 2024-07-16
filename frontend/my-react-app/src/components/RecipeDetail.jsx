@@ -14,10 +14,8 @@ const RecipeDetail = ({ recipeId }) => {
         }
     };
   
-  if (recipeId) {
     fetchRecipe();
-  }
-}, [recipeId]);
+  }, [recipeId]);
     
 if (!recipe)return <div>Select a recipe to see the details.</div>;
   

@@ -22,7 +22,7 @@ const RecipeList = ({ onSelectRecipe }) => {
       <h1>Recipes</h1>
       <ul>
         {recipes.map(recipe => (
-          <li key={recipe.id} >
+          <li key={recipe.id} onClick={() =>onSelectRecipe(recipe.id)}>
             {recipe.name}
           </li>
         ))}
