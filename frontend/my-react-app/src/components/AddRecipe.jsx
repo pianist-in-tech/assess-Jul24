@@ -4,17 +4,19 @@ import './Styles.css';
 
 const AddRecipe = () => {
   const [name, setName] = useState('');
-  const [description, setDescription] = useState('');
+  const [ingredients, setIngredients] = useState('');
+  const [instructions, setInstructions] = useState('');
   const [image, setImage] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const newRecipe = { name, description, image };
+      const newRecipe = { name, ingredients, instructions, image };
       await axios.post('http://localhost:8000/api/recipes/', newRecipe);
       alert('Recipe added successfully!');
       setName('');
-      setDescription('');
+      setIngredients('');
+      setInstructions('');
       setImage('');
     } catch (error) {
       console.error('Error adding recipe:', error);
@@ -34,9 +36,15 @@ const AddRecipe = () => {
           required
         />
         <textarea
-          placeholder="Recipe Description"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
+          placeholder="Ingredients"
+          value={ingredients}
+          onChange={(e) => setIngredients(e.target.value)}
+          required
+        />
+        <textarea
+          placeholder="Instructions"
+          value={instructions}
+          onChange={(e) => setInstructions(e.target.value)}
           required
         />
         <input

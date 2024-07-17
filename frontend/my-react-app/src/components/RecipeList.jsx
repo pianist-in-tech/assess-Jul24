@@ -9,6 +9,7 @@ const RecipeList = ({ onSelectRecipe }) => {
     const fetchRecipes = async () => {
         try {
             const data = await getRecipes();
+            console.log(data)
             setRecipes(data);
         } catch (error){
             console.error('Error fetching recipes:', error);
@@ -22,8 +23,8 @@ const RecipeList = ({ onSelectRecipe }) => {
     <div className='recipe-list-container'>
       <h3>Recipes</h3>
       <ul className='recipe-list'>
-        {recipes.map(recipe => (
-          <li key={recipe.id} onClick={() =>onSelectRecipe(recipe.id)}>
+        {recipes.map((recipe) => (
+          <li key={recipe.id} onClick={() => onSelectRecipe(recipe.id)}>
             {recipe.name}
           </li>
         ))}

@@ -29,3 +29,33 @@ export const getRecipeById = async (id) => {
   }
 };
 
+// export const addRecipe = async (recipe) => {
+//   try {
+//     const response = await api.post(`recipes/`, recipe);
+//     return response.data;
+//   } catch (error) {
+//     console.error(`Error adding recipe`, error);
+//     throw error;
+//   }
+// };
+
+export const updateRecipe = async (id, updatedRecipe) => {
+  try {
+    const response = await api.put(`recipes/update-delete/${id}/`, updatedRecipe);
+    return response.data;
+  } catch (error) {
+    console.error(`Error updating recipe with id ${id}:`, error);
+    throw error;
+  }
+};
+
+export const deleteRecipe = async (id) => {
+  try {
+    await api.delete(`recipes/update-delete/${id}/`);
+  } catch (error) {
+    console.error(`Error deleting recipe with id ${id}:`, error);
+    throw error;
+  }
+};
+
+

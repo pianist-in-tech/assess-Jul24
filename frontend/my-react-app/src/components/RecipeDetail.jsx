@@ -19,11 +19,24 @@ const RecipeDetail = ({ recipeId }) => {
   }, [recipeId]);
     
 if (!recipe)return <div>Click on a recipe to see the details.</div>;
-  
+
+
   return (
     <div className='recipe-detail-container'>
-      <h3>{recipe.name}</h3>
-      <p>{recipe.description}</p>
+      <h2>{recipe.name}</h2>
+      <h3>Ingredients</h3>
+      <ul>
+        {recipe.ingredients.map((ingredient, index) => (
+          <li key={index}>{ingredient}</li>
+        ))}
+      </ul>
+      <h3>Istructions</h3>
+      <ul>
+        {recipe.instructions.map((instruction, index) => (
+          <li key={index}>{instruction}</li>
+        ))}
+      </ul>
+        <div>
       {recipe.image_url && (
         <img
         src={recipe.image_url}
@@ -31,6 +44,7 @@ if (!recipe)return <div>Click on a recipe to see the details.</div>;
         className='recipe-image'
         />
       )}
+      </div>
     </div>
   );
 };
