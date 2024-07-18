@@ -1,2 +1,5 @@
 venv/
 .env 
+AWSCLIV2.pkg
+awcliv2.zip
+aws
