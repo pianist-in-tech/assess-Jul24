@@ -3,12 +3,13 @@ import axios from "axios";
 const API_BASE_URL = "http://localhost:8000/api/";
 
 const api = axios.create({
-  baseURL: API_BASE_URL,
+  baseURL: API_BASE_URL,// Setting the base URL for axios instance
   headers: {
-    "Content-Type": "application/json",
+    "Content-Type": "application/json",// Setting content type to JSON
   },
 });
 
+// Function to fetch all recipes
 export const getRecipes = async () => {
   try {
     const response = await api.get("recipes/");
@@ -19,6 +20,7 @@ export const getRecipes = async () => {
   }
 };
 
+// Function to fetch a single recipe by its ID
 export const getRecipeById = async (id) => {
   try {
     const response = await api.get(`recipes/${id}/`);
@@ -29,16 +31,7 @@ export const getRecipeById = async (id) => {
   }
 };
 
-// export const addRecipe = async (recipe) => {
-//   try {
-//     const response = await api.post(`recipes/`, recipe);
-//     return response.data;
-//   } catch (error) {
-//     console.error(`Error adding recipe`, error);
-//     throw error;
-//   }
-// };
-
+// Function to update an existing recipe by its ID
 export const updateRecipe = async (id, updatedRecipe) => {
   try {
     const response = await api.put(`recipes/update-delete/${id}/`, updatedRecipe);
@@ -49,6 +42,7 @@ export const updateRecipe = async (id, updatedRecipe) => {
   }
 };
 
+// Function to delete a recipe by its ID
 export const deleteRecipe = async (id) => {
   try {
     await api.delete(`recipes/update-delete/${id}/`);

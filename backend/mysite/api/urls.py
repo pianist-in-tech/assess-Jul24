@@ -9,6 +9,6 @@ router.register(r'recipes', RecipeViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
-    path('recipes/<int:pk>/', views.recipe_detail),
-    path('recipes/update-delete/<int:pk>/', RecipeUpdateDeleteView.as_view(), name='recipe-update-delete'),
+    path('recipes/<int:pk>/', views.recipe_detail), # URL pattern for retrieving a specific recipe
+    path('recipes/update-delete/<int:pk>/', RecipeUpdateDeleteView.as_view(), name='recipe-update-delete'),# URL pattern for updating or deleting a recipe
 ]

@@ -1,5 +1,6 @@
 from django.db import models
 
+# Define the Recipe model class
 class Recipe(models.Model):
     name = models.CharField(max_length=100)
     ingredients = models.JSONField()
