@@ -3,3 +3,5 @@ venv/
 AWSCLIV2.pkg
 awcliv2.zip
 aws
+__pycache__/
+*.pyc
