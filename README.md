@@ -19,7 +19,7 @@ This mini project is a mock web page built with React (frontend) and Django (bac
 1. Clone the repository:
    ```bash
    git clone https://github.com/pianist-in-tech/assess-Jul24.git
-   cd recipe-app
+   cd assess-Jul24
    ```
 
 2. Install dependencies:
