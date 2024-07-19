@@ -2,6 +2,7 @@
 from rest_framework import viewsets, status, generics, permissions
 from rest_framework.decorators import api_view 
 from rest_framework.response import Response 
+from rest_framework.permissions import AllowAny
 from .models import Recipe
 from .serializers import RecipeSerializer
 
@@ -9,6 +10,7 @@ from .serializers import RecipeSerializer
 class RecipeViewSet(viewsets.ModelViewSet):
     queryset = Recipe.objects.all()
     serializer_class = RecipeSerializer
+    permission_classes = [AllowAny]
 
 # Generic view for handling Retrieve, Update, and Destroy operations on Recipe objects
 class RecipeUpdateDeleteView(generics.RetrieveUpdateDestroyAPIView):
