@@ -5,3 +5,4 @@ awcliv2.zip
 aws
 __pycache__/
 *.pyc
+get-pip.py
